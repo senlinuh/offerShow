@@ -1,0 +1,196 @@
+body {
+  background-color: #efefef;
+  color: black;
+  margin: 0;
+  padding:0;
+}
+a {
+  color:initial;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #dedede;
+}
+
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.topNavBar {
+  padding: 12px 16px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  /* background-color: #ffffff;
+  opacity: 0.7; */
+}
+.topNavBar .logo {
+  float: left;
+}
+.topNavBar nav {
+  float: right;
+  padding: 4px 0;
+}
+.topNavBar nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topNavBar nav ul li {
+  float: left;
+  margin: 0 17px;
+}
+.topNavBar nav ul li:first-child {
+  margin-left: 0;
+}
+
+.topNavBar nav ul li a{
+  /* color: #b7b7b7; */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  display: block;
+}
+
+.topNavBar nav ul li a:hover{
+  border-bottom: 3px solid #e06567;
+}
+
+.topNavBar .logo {
+  font-size: 24px;
+  font-family: "Malgun Gothic";
+  padding: 4px 0;
+}
+.topNavBar .logo .rs {
+  color: #e06567;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.topNavBar .logo .card {
+  color: #9A9DA2;
+}
+/* 背景 */
+.banner {
+  height: 515px;
+  background-image: url('./img/bg.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.banner .mask {
+  height: 100%;
+  background-color: rgb(0,0,0,0.5);
+  /* background-color: black;
+  opacity: 0.7; */
+}
+
+/* 内容卡片 */
+.userCard {
+  max-width: 948px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.userCard .welcome {
+  background-color: #e6686a;
+  display: inline-block;
+  padding: 4px 16px;
+  color: #ffffff;
+  line-height: 22px;
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.userCard .welcome .triangle {
+  position: absolute;
+  display: block;
+  border: 10px solid transparent;
+  width: 0;
+  border-left-color: #e6686a;
+  border-top: 0px;
+  left: 6px;
+  top: 100%;
+}
+
+.userCard .pictureAndText {
+  padding: 50px;
+  /* width: 100%; */
+  /* box-sizing: border-box; */
+}
+
+.userCard .picture   {
+  /* width: 30%; */
+  float: left;
+  margin-right: 65px;
+}
+
+.userCard .text {
+  /* width: 40%; */
+  float: right;
+}
+
+.userCard .text hr{
+  margin: 20px 0;
+}
+
+
+.userCard .text  h1{
+  margin: 17px 0;
+}
+
+.userCard dl dt,
+.userCard dl dd {
+  float: left;
+  padding: 5px 0;
+}
+
+.userCard dl dt {
+  width: 30%;
+  font-weight: bold;
+}
+.userCard dl dd {
+  width: 70%;
+  color: #9da0a7;
+}
+
+.userCard footer.media {
+  background-color: #e6686a;
+  text-align: center;
+}
+
+.userCard footer.media a {
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  line-height: 30px;
+  padding: 5px 0;
+  margin: 16px;
+}
+
+.userCard footer.media a:hover {
+  background-color: #cf5d5f;
+}
+
+.userCard svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  vertical-align: top;
+}

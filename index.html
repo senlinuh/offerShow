@@ -97,44 +97,81 @@
   </main>
   <section class="skills">
     <h2>技能</h2>
-    <ol>
+    <ol class="clearfix">
       <li>
-        <h3>HTML 5 &map; CSS 3</h3>
-        <div class="progressBar"></div>
+        <h3>HTML 5CSS 3</h3>
+        <div class="progressBar">
+          <div class="progess"></div>
+        </div>
       </li>
       <li>
-        <h3>JavaScript</h3>
-        <div class="progressBar"></div>
+        <h3>css6s</h3>
+        <div class="progressBar">
+          <div class="progess"></div>
+        </div>
       </li>
       <li>
-        <h3>Vue</h3>
-        <div class="progressBar"></div>
+        <h3>HTML 5CSS 3</h3>
+        <div class="progressBar">
+          <div class="progess"></div>
+        </div>
       </li>
       <li>
-        <h3>React</h3>
-        <div class="progressBar"></div>
+        <h3>HTML 5CSS 3</h3>
+        <div class="progressBar">
+          <div class="progess"></div>
+        </div>
       </li>
       <li>
-        <h3>Http</h3>
-        <div class="progressBar"></div>
+        <h3>HTML 5CSS 3</h3>
+        <div class="progressBar">
+          <div class="progess"></div>
+        </div>
       </li>
+      <li>
+        <h3>HTML 5CSS 3</h3>
+        <div class="progressBar">
+          <div class="progess"></div>
+        </div>
+      </li>
+
     </ol>
   </section>
-  <section>
+  <section class="portfolio">
     <h2>作品集</h2>
     <nav>
-      <ol>
-        <li>所有o</li>
-        <li>框架</li>
-        <li>纯CSS</li>
+      <ol class="clearfix">
+        <li id="protfolio1">所有</li>
+        <li id="protfolio2">框架</li>
+        <li id="protfolio3">纯CSS</li>
       </ol>
+      <div class="bar">
+        <div id="protfolioBar" class="bar-inner status-1"></div>
+      </div>
     </nav>
-    <div class="jobs">
-      <div class="big"></div>
-      <div class="small"></div>
-      <div class="small"></div>
+    <div class="works">
+      <div class="big">
+        <img src="./img/1.png" alt="作品1">
+      </div>
+      <div class="small" style="left: 546px;top: 0;">
+        <img src="./img/2.jpg" style="width: 400px;height: 300px;" alt="作品2">
+      </div>
+      <div class="small" style="left: 546px;top:321px;">
+        <img src="./img/3.jpg" style="width: 400px;height: 276px;" alt="作品3">
+      </div>
     </div>
   </section>
+  <script>
+    protfolio1.onclick = function () {
+      protfolioBar.className = 'bar-inner status-1'
+    }
+    protfolio2.onclick = function () {
+      protfolioBar.className = 'bar-inner status-2'
+    }
+    protfolio3.onclick = function () {
+      protfolioBar.className = 'bar-inner status-3'
+    }
+  </script>
 </body>
 
 </html>

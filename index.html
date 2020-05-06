@@ -4,7 +4,8 @@
 <head>
   <!-- <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-  <link rel="stylesheet" href="./a.css">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./loding.css">
   <script src="http://at.alicdn.com/t/font_1765613_oips0q5xwqs.js"></script>
   <title>我的网页</title>
   <style type="text/css">
@@ -15,10 +16,30 @@
       fill: currentColor;
       overflow: hidden;
     }
+
+    .site-welcome {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #888;
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .site-welcome.active {
+      display: flex;
+    }
   </style>
 </head>
 
 <body>
+  <div id="siteWelcome" class="site-welcome active">
+    <div class="loading"></div>
+  </div>
   <div class="topNavBar clearfix">
     <a class="logo" href="#">
       <span class="rs">RS</span>
@@ -171,6 +192,9 @@
     protfolio3.onclick = function () {
       protfolioBar.className = 'bar-inner status-3'
     }
+  </script>
+  <script>
+    siteWelcome.classList.remove('active')
   </script>
 </body>
 

@@ -5,55 +5,43 @@
   <!-- <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link rel="stylesheet" href="./main.css">
-  <link rel="stylesheet" href="./loding.css">
+  <link rel="stylesheet" href="./node_modules/swiper/css/swiper.min.css">
   <script src="https://at.alicdn.com/t/font_1765613_oips0q5xwqs.js"></script>
+  <script src="./node_modules/swiper/js/swiper.min.js"></script>
   <title>我的网页</title>
-  <style type="text/css">
-    .icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.15em;
-      fill: currentColor;
-      overflow: hidden;
-    }
-
-    .site-welcome {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #888;
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .site-welcome.active {
-      display: flex;
-    }
-  </style>
 </head>
 
 <body>
-  <div id="siteWelcome" class="site-welcome active">
-    <div class="loading"></div>
-  </div>
-  <div class="topNavBar clearfix">
+  <div id="topNavBar" class="topNavBar clearfix">
     <a class="logo" href="#">
       <span class="rs">RS</span>
       <span class="card">card</span>
     </a>
-    <nav>
+    <nav class="menu">
       <ul class="clearfix">
-        <li><a href="#">ABOUTss</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">ABOUT</a></li>
+        <li><a href="#siteAbout">关于</a></li>
+        <li>
+          <a href="#siteSkills">技能</a>
+        </li>
+        <li>
+          <a href="#siteWorks">作品</a>
+          <ul class="submenu">
+            <li>作品1</li>
+            <li>作品2</li>
+            <li>作品3</li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">博客</a>
+          <ul class="submenu">
+            <li>博客</li>
+            <li>作品2</li>
+            <li>作品3</li>
+          </ul>
+        </li>
+        <li><a href="#">日历</a></li>
+        <li><a href="#">联系方式</a></li>
+        <li><a href="#"></a></li>
       </ul>
     </nav>
   </div>
@@ -61,7 +49,7 @@
     <div class="mask"></div>
   </div>
   <main>
-    <div class="userCard">
+    <div data-x id="siteAbout" class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture">
           <img src="./img/avatar.jpg" style="width: 299;height: 247;" alt="头像">
@@ -116,7 +104,7 @@
       啊实打实的啊请问请问恶趣味饿啊上的阿松大阿松大阿松大阿松大阿萨
     </p>
   </main>
-  <section class="skills">
+  <section data-x id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -158,46 +146,28 @@
 
     </ol>
   </section>
-  <section class="portfolio">
+  <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="protfolio1">所有</li>
-        <li id="protfolio2">框架</li>
-        <li id="protfolio3">纯CSS</li>
-      </ol>
-      <div class="bar">
-        <div id="protfolioBar" class="bar-inner status-1"></div>
-      </div>
-    </nav>
     <div class="works">
-      <div class="big">
-        <img src="./img/1.png" alt="作品1">
-      </div>
-      <div class="small" style="left: 546px;top: 0;">
-        <img src="./img/2.jpg" style="width: 400px;height: 300px;" alt="作品2">
-      </div>
-      <div class="small" style="left: 546px;top:321px;">
-        <img src="./img/3.jpg" style="width: 400px;height: 276px;" alt="作品3">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./img/work/kbd-nav.png" alt=""></div>
+          <div class="swiper-slide"><img src="./img/work/canvas.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="./img/work/slide.jpg" alt=""></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
   </section>
-  <script>
-    protfolio1.onclick = function () {
-      protfolioBar.className = 'bar-inner status-1'
-    }
-    protfolio2.onclick = function () {
-      protfolioBar.className = 'bar-inner status-2'
-    }
-    protfolio3.onclick = function () {
-      protfolioBar.className = 'bar-inner status-3'
-    }
-  </script>
-  <script>
-    setTimeout(function(){
-      siteWelcome.classList.remove('active')
-    },1000)
-  </script>
+  <!-- 模块化 -->
+  <script src="./js/init-swiper.js"></script>
+  <script src="./js/auto-slide-up.js"></script>
+  <script src="./js/smoothly-nav.js"></script>
 </body>
 
 </html>

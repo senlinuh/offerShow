@@ -12,6 +12,13 @@ a {
 ol li {
   list-style: none;
 }
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 
 h1,
 h2,
@@ -46,8 +53,17 @@ hr {
   top: 0;
   box-sizing: border-box;
   z-index: 9;
+  transition: all 0.5s;
+  color: #b7b7b7;
   /* background-color: #ffffff;
   opacity: 0.7; */
+}
+
+.topNavBar.sticky {
+  padding: 10px 16px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #3d4451;
 }
 .topNavBar .logo {
   float: left;
@@ -61,17 +77,18 @@ hr {
   margin: 0;
   padding: 0;
 }
-.topNavBar nav ul li {
+.topNavBar > nav > ul > li {
   float: left;
   margin: 0 17px;
+  position: relative;
 }
 .topNavBar nav ul li:first-child {
   margin-left: 0;
 }
 
-.topNavBar nav ul li a {
+.topNavBar > nav > ul > li > a {
   /* color: #b7b7b7; */
-  color: #ffffff;
+  color: inherit;
   font-weight: bold;
   font-size: 12px;
   padding-top: 5px;
@@ -79,10 +96,65 @@ hr {
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   display: block;
+  position: relative;
 }
 
-.topNavBar nav ul li a:hover {
-  border-bottom: 3px solid #e06567;
+.topNavBar nav ul li.active > a::after,
+.topNavBar nav ul li.highlight > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #e06567;
+  height: 3px;
+  animation: menuSlide 0.2s;
+}
+
+@keyframes menuSlide {
+  0% {
+    width: 0;
+    /* transform: translateX(-100%); */
+  }
+  100% {
+    width: 100%;
+    /* transform: translateX(0); */
+  }
+}
+
+.topNavBar .submenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #ffffff;
+  color: #3d4451;
+  animation: submenuSlide 0.3s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes submenuSlide {
+  0% {
+    margin-right: 100%;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+.topNavBar li.active > .submenu {
+  display: block;
+}
+
+.topNavBar .submenu > li {
+  white-space: nowrap;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.topNavBar .submenu > li:hover {
+  color: #e6686a;
 }
 
 .topNavBar .logo {
@@ -99,6 +171,33 @@ hr {
 .topNavBar .logo .card {
   color: #9a9da2;
 }
+
+[data-x].active {
+  outline: 1px solid red;
+}
+
+/* [data-x].animate {
+  animation: slideUp 0.5s;
+} */
+
+[data-x].offset {
+  transform: translateY(100px);
+}
+
+[data-x] {
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* 背景 */
 .banner {
   height: 515px;
@@ -122,7 +221,7 @@ hr {
 /* 内容卡片 */
 
 main {
-  margin-top: 180px;
+  padding-top: 180px;
   position: relative;
 }
 .userCard {
@@ -290,77 +389,25 @@ section.skills ol .progressBar {
   /* width: 80%; */
   margin: 4px 0 40px;
   /* border: 1px solid red; */
+  overflow: hidden;
 }
-section.skills ol .progressBar .progess {
+
+section.skills .progressBar .progess {
   height: 100%;
   width: 90%;
   background-color: #e6686a;
+  /* transform: translateX(0); */
+  transition: all 1s;
+}
+
+section.skills.offset .progess {
+  transform: translateX(-100%);
 }
 
 /* 做评级 */
 section.portfolio {
   text-align: center;
   margin-bottom: 40px;
-}
-section.portfolio nav {
-  display: inline-block;
-  margin-top: 30px;
-}
-section.portfolio nav ol {
-  margin: 0 auto;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.portfolio nav ol li {
-  float: left;
-  margin-left: 40px;
-  cursor: pointer;
-}
-
-.portfolio nav ol li:first-child {
-  margin-left: 0;
-}
-
-.portfolio nav .bar {
-  height: 5px;
-  background-color: #ffffff;
-  margin-top: 5px;
-  border-radius: 2px;
-  margin-bottom: 10px;
-}
-
-.portfolio nav .bar .bar-inner {
-  height: 100%;
-  background-color: #e6686a;
-  width: 10%;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-/* .portfolio nav .bar .status-1 .bar-inner {
-  margin-left: 0;
-  width: 50px;
-}
-
-.portfolio nav .bar .status-1 .bar-inner {
-  margin-left: 0;
-  width: 50px;
-} */
-
-.portfolio nav .bar .status-1 {
-  margin-left: 0px;
-  width: 50px;
-}
-
-.portfolio nav .bar .status-2 {
-  margin-left: 65px;
-  width: 50px;
-}
-
-.portfolio nav .bar .status-3 {
-  margin-left: 138px;
-  width: 50px;
 }
 
 section .works {
@@ -369,20 +416,14 @@ section .works {
   margin-top: 30px;
 }
 
-section .works .big,
-section .works .small {
-  position: absolute;
+/* swiper5 */
+.swiper-container {
+  width: 800px;
+  height: 500px;
 }
 
-section .big {
+.swiper-slide > img {
+  width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
 }
-section .works .big img {
-  width: 500px;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
+/* swiper5 */

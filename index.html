@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link rel="stylesheet" href="./main.css">
   <link rel="stylesheet" href="./node_modules/swiper/css/swiper.min.css">
-  <script src="https://at.alicdn.com/t/font_1765613_oips0q5xwqs.js"></script>
+  <!-- <script src="https://at.alicdn.com/t/font_1765613_oips0q5xwqs.js"></script> -->
   <script src="./node_modules/swiper/js/swiper.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script> -->
   <title>我的网页</title>
 </head>
 
@@ -148,7 +149,7 @@
   </section>
   <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
-    <div class="works">
+    <div id="mySlides" class="works">
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="./img/work/kbd-nav.png" alt=""></div>
@@ -164,10 +165,25 @@
       </div>
     </div>
   </section>
+  <section class="message">
+    <h2>留言</h2>
+    <form id="postMessage">
+      <label for="">姓名</label>
+      <input type="text" name="name">
+      <label for="">内容</label>
+      <input type="text" name="content">
+      <input type="submit" value="提交">
+    </form>
+    <ol id='messageList'>
+    </ol>
+  </section>
+  <script src="./node_modules/leancloud-storage/dist//av-min.js"></script>
+  <script src="./js/message.js"></script>
   <!-- 模块化 -->
   <script src="./js/init-swiper.js"></script>
   <script src="./js/auto-slide-up.js"></script>
   <script src="./js/smoothly-nav.js"></script>
+  <script src="./js/sticky-topbar.js"></script>
 </body>
 
 </html>

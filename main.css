@@ -351,6 +351,7 @@ main .selfTrue {
 
 /* 技能 */
 section.skills,
+section.message,
 section.portfolio {
   max-width: 948px;
   margin: 0 auto;
@@ -411,8 +412,8 @@ section.portfolio {
 }
 
 section .works {
-  position: relative;
-  height: 597px;
+  /* position: relative;
+  height: 597px; */
   margin-top: 30px;
 }
 
@@ -427,3 +428,25 @@ section .works {
   height: 100%;
 }
 /* swiper5 */
+
+section.message {
+  max-width: 700px;
+  margin: 0 auto;
+}
+section.message > ol > li {
+  padding: 16px;
+  border-bottom: #ececec;
+}
+
+section.message > ol > li:nth-child(odd) {
+  background-color: #9a9da2;
+}
+
+section.message > ol > li:nth-child(even) {
+  /* background-color: #9a9da2; */
+}
+
+section.message > form {
+  text-align: center;
+  margin: 20px 0;
+}

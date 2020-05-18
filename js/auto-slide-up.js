@@ -4,17 +4,11 @@
     for (let i = 0; i < specialTags.length; i++) {
         specialTags[i].classList.add('offset')
     }
-    findClosest()
-    // 找到最近的并移除offset
-    window.onscroll = function (e) {
-        if (window.scrollY > 10) {
-            topNavBar.classList.add('sticky')
-        } else {
-            topNavBar.classList.remove('sticky')
-        }
-        findClosest()
-    }
-    function findClosest() {
+    findClosetAndRemoveOffset()
+    window.addEventListener('scroll', function (x) {
+        findClosetAndRemoveOffset()
+    })
+    function findClosetAndRemoveOffset() {
         let specialTags = document.querySelectorAll('[data-x]')
         let minIndex = 0
         for (let i = 0; i < specialTags.length; i++) {
@@ -25,7 +19,6 @@
         // minIndex 是距离窗口顶部最近的元素
 
         specialTags[minIndex].classList.remove('offset')
-        console.log('嘿嘿嘿', specialTags[minIndex].classList)
         let id = specialTags[minIndex].id
         let a = document.querySelector('a[href="#' + id + '"]')
         let li = a.parentNode

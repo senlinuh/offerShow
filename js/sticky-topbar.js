@@ -3,7 +3,7 @@
     var view = document.querySelector('#topNavBar')
     var controller = {
         view: null,
-        init: function () {
+        init: function (view) {
             this.view = view;
             this.bindEventes()
         },
@@ -12,10 +12,8 @@
             window.addEventListener('scroll', (x) => {
                 if (window.scrollY > 10) {
                     this.active()
-                    // view.classList.add('sticky')
                 } else {
                     this.deactive()
-                    // view.classList.remove('sticky')
                 }
             })
         },

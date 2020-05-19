@@ -43,25 +43,3 @@ myForm.addEventListener('submit', function (e) {
         myForm.querySelector('input[name=content]').value = ''
     })
 })
-
-// let button = myForm.querySelector('input[name=sumbit]')
-// button.addEventListener('click', function () {
-
-// })
-// let input = myForm.querySelector('input[name=content]')
-// input.addEventListener('keypress', function (e) {
-//     if (e.keyCode === 13) {
-
-//     }
-// })
-// console.log(AV)
-// // 创建一个表
-// const TestObject = AV.Object.extend('TestObject');
-// // 在表中创建一行数据
-// const testObject = new TestObject();
-// // 数据的内容是 words:'Hello world!'
-// testObject.set('words', 'Hello world!ddd');
-// // 如果保存成功，则运行 console.log('保存成功。')
-// testObject.save().then((testObject) => {
-//     console.log('保存成功。',testObject)
-// })
